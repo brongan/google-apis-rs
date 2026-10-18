@@ -9,7 +9,7 @@
 //! The original source code is [on github](https://github.com/Byron/google-apis-rs/tree/main/gen/androidpublisher3).
 //! # Features
 //!
-//! Handle the following *Resources* with ease from the central [hub](AndroidPublisher) ...
+//! Handle the following *Resources* with ease from the central [hub](api::AndroidPublisher) ...
 //!
 //! * applications
 //!  * [*data safety*](api::ApplicationDataSafetyCall), [*device tier configs create*](api::ApplicationDeviceTierConfigCreateCall), [*device tier configs get*](api::ApplicationDeviceTierConfigGetCall) and [*device tier configs list*](api::ApplicationDeviceTierConfigListCall)
@@ -64,7 +64,7 @@
 //!
 //! The API is structured into the following primary items:
 //!
-//! * **[Hub](AndroidPublisher)**
+//! * **[Hub](api::AndroidPublisher)**
 //!     * a central object to maintain state and allow accessing all *Activities*
 //!     * creates [*Method Builders*](common::MethodsBuilder) which in turn
 //!       allow access to individual [*Call Builders*](common::CallBuilder)

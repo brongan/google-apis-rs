@@ -193,24 +193,24 @@ impl<'a, C> AndroidPublisher<C> {
     /// It defaults to `google-api-rust-client/7.0.0`.
     ///
     /// Returns the previously set user-agent.
-    pub fn user_agent(&mut self, agent_name: String) -> String {
-        std::mem::replace(&mut self._user_agent, agent_name)
+    pub fn user_agent(&mut self, agent_name: impl Into<String>) -> String {
+        std::mem::replace(&mut self._user_agent, agent_name.into())
     }
 
     /// Set the base url to use in all requests to the server.
     /// It defaults to `https://androidpublisher.googleapis.com/`.
     ///
     /// Returns the previously set base url.
-    pub fn base_url(&mut self, new_base_url: String) -> String {
-        std::mem::replace(&mut self._base_url, new_base_url)
+    pub fn base_url(&mut self, new_base_url: impl Into<String>) -> String {
+        std::mem::replace(&mut self._base_url, new_base_url.into())
     }
 
     /// Set the root url to use in all requests to the server.
     /// It defaults to `https://androidpublisher.googleapis.com/`.
     ///
     /// Returns the previously set root url.
-    pub fn root_url(&mut self, new_root_url: String) -> String {
-        std::mem::replace(&mut self._root_url, new_root_url)
+    pub fn root_url(&mut self, new_root_url: impl Into<String>) -> String {
+        std::mem::replace(&mut self._root_url, new_root_url.into())
     }
 }
 
@@ -11621,8 +11621,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> ApplicationDeviceTierConfigCreateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> ApplicationDeviceTierConfigCreateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Whether the service should accept device IDs that are unknown to Play's device catalog.
@@ -11937,8 +11940,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> ApplicationDeviceTierConfigGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> ApplicationDeviceTierConfigGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. Id of an existing device tier config.
@@ -12259,15 +12265,21 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> ApplicationDeviceTierConfigListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> ApplicationDeviceTierConfigListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// A page token, received from a previous `ListDeviceTierConfigs` call. Provide this to retrieve the subsequent page.
     ///
     /// Sets the *page token* query property to the given value.
-    pub fn page_token(mut self, new_value: &str) -> ApplicationDeviceTierConfigListCall<'a, C> {
-        self._page_token = Some(new_value.to_string());
+    pub fn page_token(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> ApplicationDeviceTierConfigListCall<'a, C> {
+        self._page_token = Some(new_value.into());
         self
     }
     /// The maximum number of device tier configs to return. The service may return fewer than this value. If unspecified, at most 10 device tier configs will be returned. The maximum value for this field is 100; values above 100 will be coerced to 100. Device tier configs will be ordered by descending creation time.
@@ -12610,8 +12622,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> ApplicationDataSafetyCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> ApplicationDataSafetyCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -12950,8 +12965,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> ApprecoveryAddTargetingCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> ApprecoveryAddTargetingCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. ID corresponding to the app recovery action.
@@ -13301,8 +13319,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> ApprecoveryCancelCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> ApprecoveryCancelCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. ID corresponding to the app recovery action.
@@ -13648,8 +13666,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> ApprecoveryCreateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> ApprecoveryCreateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -13989,8 +14007,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> ApprecoveryDeployCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> ApprecoveryDeployCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. ID corresponding to the app recovery action to deploy.
@@ -14301,8 +14319,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> ApprecoveryListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> ApprecoveryListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. Version code targeted by the list of recovery actions.
@@ -14651,8 +14669,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditApkAddexternallyhostedCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditApkAddexternallyhostedCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -14661,8 +14682,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditApkAddexternallyhostedCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditApkAddexternallyhostedCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -14962,8 +14986,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditApkListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditApkListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -14972,8 +14996,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditApkListCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditApkListCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -15339,9 +15363,15 @@ where
                                 if !parts.status.is_success() {
                                     dlg.store_upload_url(None);
                                     dlg.finished(false);
-                                    return Err(common::Error::Failure(
-                                        common::Response::from_parts(parts, body),
-                                    ));
+                                    let bytes = common::to_bytes(body).await.unwrap_or_default();
+                                    let error = serde_json::from_str(&common::to_string(&bytes));
+                                    return Err(match error {
+                                        Ok(value) => common::Error::BadRequest(value),
+                                        _ => common::Error::Failure(common::to_response(
+                                            parts,
+                                            bytes.into(),
+                                        )),
+                                    });
                                 }
                             }
                         }
@@ -15419,8 +15449,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditApkUploadCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditApkUploadCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -15429,8 +15459,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditApkUploadCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditApkUploadCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -15727,8 +15757,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditBundleListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditBundleListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -15737,8 +15767,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditBundleListCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditBundleListCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -16121,9 +16151,15 @@ where
                                 if !parts.status.is_success() {
                                     dlg.store_upload_url(None);
                                     dlg.finished(false);
-                                    return Err(common::Error::Failure(
-                                        common::Response::from_parts(parts, body),
-                                    ));
+                                    let bytes = common::to_bytes(body).await.unwrap_or_default();
+                                    let error = serde_json::from_str(&common::to_string(&bytes));
+                                    return Err(match error {
+                                        Ok(value) => common::Error::BadRequest(value),
+                                        _ => common::Error::Failure(common::to_response(
+                                            parts,
+                                            bytes.into(),
+                                        )),
+                                    });
                                 }
                             }
                         }
@@ -16201,8 +16237,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditBundleUploadCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditBundleUploadCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -16211,15 +16247,18 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditBundleUploadCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditBundleUploadCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// Device tier config (DTC) to be used for generating deliverables (APKs). Contains id of the DTC or "LATEST" for last uploaded DTC.
     ///
     /// Sets the *device tier config id* query property to the given value.
-    pub fn device_tier_config_id(mut self, new_value: &str) -> EditBundleUploadCall<'a, C> {
-        self._device_tier_config_id = Some(new_value.to_string());
+    pub fn device_tier_config_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditBundleUploadCall<'a, C> {
+        self._device_tier_config_id = Some(new_value.into());
         self
     }
     /// Deprecated. The installation warning has been removed, it's not necessary to set this field anymore.
@@ -16534,8 +16573,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditCountryavailabilityGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditCountryavailabilityGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -16544,8 +16586,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditCountryavailabilityGetCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditCountryavailabilityGetCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The track to read from.
@@ -16554,8 +16599,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn track(mut self, new_value: &str) -> EditCountryavailabilityGetCall<'a, C> {
-        self._track = new_value.to_string();
+    pub fn track(mut self, new_value: impl Into<String>) -> EditCountryavailabilityGetCall<'a, C> {
+        self._track = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -16942,9 +16987,15 @@ where
                                 if !parts.status.is_success() {
                                     dlg.store_upload_url(None);
                                     dlg.finished(false);
-                                    return Err(common::Error::Failure(
-                                        common::Response::from_parts(parts, body),
-                                    ));
+                                    let bytes = common::to_bytes(body).await.unwrap_or_default();
+                                    let error = serde_json::from_str(&common::to_string(&bytes));
+                                    return Err(match error {
+                                        Ok(value) => common::Error::BadRequest(value),
+                                        _ => common::Error::Failure(common::to_response(
+                                            parts,
+                                            bytes.into(),
+                                        )),
+                                    });
                                 }
                             }
                         }
@@ -17022,8 +17073,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditDeobfuscationfileUploadCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditDeobfuscationfileUploadCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Unique identifier for this edit.
@@ -17032,8 +17086,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditDeobfuscationfileUploadCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditDeobfuscationfileUploadCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The version code of the APK whose Deobfuscation File is being uploaded.
@@ -17054,9 +17111,9 @@ where
     /// we provide this method for API completeness.
     pub fn deobfuscation_file_type(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> EditDeobfuscationfileUploadCall<'a, C> {
-        self._deobfuscation_file_type = new_value.to_string();
+        self._deobfuscation_file_type = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -17356,8 +17413,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditDetailGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditDetailGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -17366,8 +17423,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditDetailGetCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditDetailGetCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -17701,8 +17758,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditDetailPatchCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditDetailPatchCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -17711,8 +17768,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditDetailPatchCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditDetailPatchCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -18049,8 +18106,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditDetailUpdateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditDetailUpdateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -18059,8 +18116,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditDetailUpdateCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditDetailUpdateCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -18381,8 +18438,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditExpansionfileGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditExpansionfileGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -18391,8 +18448,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditExpansionfileGetCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditExpansionfileGetCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The version code of the APK whose expansion file configuration is being read or modified.
@@ -18411,8 +18468,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn expansion_file_type(mut self, new_value: &str) -> EditExpansionfileGetCall<'a, C> {
-        self._expansion_file_type = new_value.to_string();
+    pub fn expansion_file_type(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditExpansionfileGetCall<'a, C> {
+        self._expansion_file_type = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -18770,8 +18830,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditExpansionfilePatchCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditExpansionfilePatchCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -18780,8 +18843,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditExpansionfilePatchCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditExpansionfilePatchCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The version code of the APK whose expansion file configuration is being read or modified.
@@ -18800,8 +18863,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn expansion_file_type(mut self, new_value: &str) -> EditExpansionfilePatchCall<'a, C> {
-        self._expansion_file_type = new_value.to_string();
+    pub fn expansion_file_type(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditExpansionfilePatchCall<'a, C> {
+        self._expansion_file_type = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -19159,8 +19225,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditExpansionfileUpdateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditExpansionfileUpdateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -19169,8 +19238,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditExpansionfileUpdateCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditExpansionfileUpdateCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The version code of the APK whose expansion file configuration is being read or modified.
@@ -19189,8 +19258,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn expansion_file_type(mut self, new_value: &str) -> EditExpansionfileUpdateCall<'a, C> {
-        self._expansion_file_type = new_value.to_string();
+    pub fn expansion_file_type(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditExpansionfileUpdateCall<'a, C> {
+        self._expansion_file_type = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -19577,9 +19649,15 @@ where
                                 if !parts.status.is_success() {
                                     dlg.store_upload_url(None);
                                     dlg.finished(false);
-                                    return Err(common::Error::Failure(
-                                        common::Response::from_parts(parts, body),
-                                    ));
+                                    let bytes = common::to_bytes(body).await.unwrap_or_default();
+                                    let error = serde_json::from_str(&common::to_string(&bytes));
+                                    return Err(match error {
+                                        Ok(value) => common::Error::BadRequest(value),
+                                        _ => common::Error::Failure(common::to_response(
+                                            parts,
+                                            bytes.into(),
+                                        )),
+                                    });
                                 }
                             }
                         }
@@ -19657,8 +19735,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditExpansionfileUploadCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditExpansionfileUploadCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -19667,8 +19748,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditExpansionfileUploadCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditExpansionfileUploadCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The version code of the APK whose expansion file configuration is being read or modified.
@@ -19687,8 +19768,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn expansion_file_type(mut self, new_value: &str) -> EditExpansionfileUploadCall<'a, C> {
-        self._expansion_file_type = new_value.to_string();
+    pub fn expansion_file_type(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> EditExpansionfileUploadCall<'a, C> {
+        self._expansion_file_type = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -19985,8 +20069,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditImageDeleteCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditImageDeleteCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -19995,8 +20079,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditImageDeleteCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditImageDeleteCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German).
@@ -20005,8 +20089,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn language(mut self, new_value: &str) -> EditImageDeleteCall<'a, C> {
-        self._language = new_value.to_string();
+    pub fn language(mut self, new_value: impl Into<String>) -> EditImageDeleteCall<'a, C> {
+        self._language = new_value.into();
         self
     }
     /// Type of the Image.
@@ -20015,8 +20099,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn image_type(mut self, new_value: &str) -> EditImageDeleteCall<'a, C> {
-        self._image_type = new_value.to_string();
+    pub fn image_type(mut self, new_value: impl Into<String>) -> EditImageDeleteCall<'a, C> {
+        self._image_type = new_value.into();
         self
     }
     /// Unique identifier an image within the set of images attached to this edit.
@@ -20025,8 +20109,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn image_id(mut self, new_value: &str) -> EditImageDeleteCall<'a, C> {
-        self._image_id = new_value.to_string();
+    pub fn image_id(mut self, new_value: impl Into<String>) -> EditImageDeleteCall<'a, C> {
+        self._image_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -20334,8 +20418,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditImageDeleteallCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditImageDeleteallCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -20344,8 +20428,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditImageDeleteallCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditImageDeleteallCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German). Providing a language that is not supported by the App is a no-op.
@@ -20354,8 +20438,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn language(mut self, new_value: &str) -> EditImageDeleteallCall<'a, C> {
-        self._language = new_value.to_string();
+    pub fn language(mut self, new_value: impl Into<String>) -> EditImageDeleteallCall<'a, C> {
+        self._language = new_value.into();
         self
     }
     /// Type of the Image. Providing an image type that refers to no images is a no-op.
@@ -20364,8 +20448,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn image_type(mut self, new_value: &str) -> EditImageDeleteallCall<'a, C> {
-        self._image_type = new_value.to_string();
+    pub fn image_type(mut self, new_value: impl Into<String>) -> EditImageDeleteallCall<'a, C> {
+        self._image_type = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -20673,8 +20757,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditImageListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditImageListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -20683,8 +20767,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditImageListCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditImageListCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German). There must be a store listing for the specified language.
@@ -20693,8 +20777,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn language(mut self, new_value: &str) -> EditImageListCall<'a, C> {
-        self._language = new_value.to_string();
+    pub fn language(mut self, new_value: impl Into<String>) -> EditImageListCall<'a, C> {
+        self._language = new_value.into();
         self
     }
     /// Type of the Image. Providing an image type that refers to no images will return an empty response.
@@ -20703,8 +20787,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn image_type(mut self, new_value: &str) -> EditImageListCall<'a, C> {
-        self._image_type = new_value.to_string();
+    pub fn image_type(mut self, new_value: impl Into<String>) -> EditImageListCall<'a, C> {
+        self._image_type = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -21075,9 +21159,15 @@ where
                                 if !parts.status.is_success() {
                                     dlg.store_upload_url(None);
                                     dlg.finished(false);
-                                    return Err(common::Error::Failure(
-                                        common::Response::from_parts(parts, body),
-                                    ));
+                                    let bytes = common::to_bytes(body).await.unwrap_or_default();
+                                    let error = serde_json::from_str(&common::to_string(&bytes));
+                                    return Err(match error {
+                                        Ok(value) => common::Error::BadRequest(value),
+                                        _ => common::Error::Failure(common::to_response(
+                                            parts,
+                                            bytes.into(),
+                                        )),
+                                    });
                                 }
                             }
                         }
@@ -21155,8 +21245,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditImageUploadCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditImageUploadCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -21165,8 +21255,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditImageUploadCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditImageUploadCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German). Providing a language that is not supported by the App is a no-op.
@@ -21175,8 +21265,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn language(mut self, new_value: &str) -> EditImageUploadCall<'a, C> {
-        self._language = new_value.to_string();
+    pub fn language(mut self, new_value: impl Into<String>) -> EditImageUploadCall<'a, C> {
+        self._language = new_value.into();
         self
     }
     /// Type of the Image.
@@ -21185,8 +21275,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn image_type(mut self, new_value: &str) -> EditImageUploadCall<'a, C> {
-        self._image_type = new_value.to_string();
+    pub fn image_type(mut self, new_value: impl Into<String>) -> EditImageUploadCall<'a, C> {
+        self._image_type = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -21478,8 +21568,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditListingDeleteCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditListingDeleteCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -21488,8 +21578,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditListingDeleteCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditListingDeleteCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German).
@@ -21498,8 +21588,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn language(mut self, new_value: &str) -> EditListingDeleteCall<'a, C> {
-        self._language = new_value.to_string();
+    pub fn language(mut self, new_value: impl Into<String>) -> EditListingDeleteCall<'a, C> {
+        self._language = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -21785,8 +21875,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditListingDeleteallCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditListingDeleteallCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -21795,8 +21885,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditListingDeleteallCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditListingDeleteallCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -22102,8 +22192,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditListingGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditListingGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -22112,8 +22202,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditListingGetCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditListingGetCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German).
@@ -22122,8 +22212,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn language(mut self, new_value: &str) -> EditListingGetCall<'a, C> {
-        self._language = new_value.to_string();
+    pub fn language(mut self, new_value: impl Into<String>) -> EditListingGetCall<'a, C> {
+        self._language = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -22423,8 +22513,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditListingListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditListingListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -22433,8 +22523,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditListingListCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditListingListCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -22777,8 +22867,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditListingPatchCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditListingPatchCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -22787,8 +22877,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditListingPatchCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditListingPatchCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German).
@@ -22797,8 +22887,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn language(mut self, new_value: &str) -> EditListingPatchCall<'a, C> {
-        self._language = new_value.to_string();
+    pub fn language(mut self, new_value: impl Into<String>) -> EditListingPatchCall<'a, C> {
+        self._language = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -23141,8 +23231,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditListingUpdateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditListingUpdateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -23151,8 +23241,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditListingUpdateCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditListingUpdateCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German).
@@ -23161,8 +23251,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn language(mut self, new_value: &str) -> EditListingUpdateCall<'a, C> {
-        self._language = new_value.to_string();
+    pub fn language(mut self, new_value: impl Into<String>) -> EditListingUpdateCall<'a, C> {
+        self._language = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -23468,8 +23558,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditTesterGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditTesterGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -23478,8 +23568,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditTesterGetCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditTesterGetCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The track to read from.
@@ -23488,8 +23578,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn track(mut self, new_value: &str) -> EditTesterGetCall<'a, C> {
-        self._track = new_value.to_string();
+    pub fn track(mut self, new_value: impl Into<String>) -> EditTesterGetCall<'a, C> {
+        self._track = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -23829,8 +23919,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditTesterPatchCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditTesterPatchCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -23839,8 +23929,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditTesterPatchCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditTesterPatchCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The track to update.
@@ -23849,8 +23939,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn track(mut self, new_value: &str) -> EditTesterPatchCall<'a, C> {
-        self._track = new_value.to_string();
+    pub fn track(mut self, new_value: impl Into<String>) -> EditTesterPatchCall<'a, C> {
+        self._track = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -24193,8 +24283,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditTesterUpdateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditTesterUpdateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -24203,8 +24293,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditTesterUpdateCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditTesterUpdateCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The track to update.
@@ -24213,8 +24303,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn track(mut self, new_value: &str) -> EditTesterUpdateCall<'a, C> {
-        self._track = new_value.to_string();
+    pub fn track(mut self, new_value: impl Into<String>) -> EditTesterUpdateCall<'a, C> {
+        self._track = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -24551,8 +24641,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditTrackCreateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditTrackCreateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. Identifier of the edit.
@@ -24561,8 +24651,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditTrackCreateCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditTrackCreateCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -24868,8 +24958,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditTrackGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditTrackGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -24878,8 +24968,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditTrackGetCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditTrackGetCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// Identifier of the track. [More on track name](https://developers.google.com/android-publisher/tracks#ff-track-name)
@@ -24888,8 +24978,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn track(mut self, new_value: &str) -> EditTrackGetCall<'a, C> {
-        self._track = new_value.to_string();
+    pub fn track(mut self, new_value: impl Into<String>) -> EditTrackGetCall<'a, C> {
+        self._track = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -25186,8 +25276,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditTrackListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditTrackListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -25196,8 +25286,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditTrackListCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditTrackListCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -25537,8 +25627,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditTrackPatchCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditTrackPatchCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -25547,8 +25637,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditTrackPatchCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditTrackPatchCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// Identifier of the track. [More on track name](https://developers.google.com/android-publisher/tracks#ff-track-name)
@@ -25557,8 +25647,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn track(mut self, new_value: &str) -> EditTrackPatchCall<'a, C> {
-        self._track = new_value.to_string();
+    pub fn track(mut self, new_value: impl Into<String>) -> EditTrackPatchCall<'a, C> {
+        self._track = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -25901,8 +25991,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditTrackUpdateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditTrackUpdateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -25911,8 +26001,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditTrackUpdateCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditTrackUpdateCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// Identifier of the track. [More on track name](https://developers.google.com/android-publisher/tracks#ff-track-name)
@@ -25921,8 +26011,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn track(mut self, new_value: &str) -> EditTrackUpdateCall<'a, C> {
-        self._track = new_value.to_string();
+    pub fn track(mut self, new_value: impl Into<String>) -> EditTrackUpdateCall<'a, C> {
+        self._track = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -26227,8 +26317,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditCommitCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditCommitCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -26237,8 +26327,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditCommitCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditCommitCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// When a rejection happens, the parameter will make sure that the changes in this edit won't be reviewed until they are explicitly sent for review from within the Google Play Console UI. These changes will be added to any other changes that are not yet sent for review.
@@ -26528,8 +26618,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditDeleteCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditDeleteCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -26538,8 +26628,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditDeleteCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditDeleteCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -26836,8 +26926,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -26846,8 +26936,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditGetCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditGetCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -27177,8 +27267,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditInsertCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditInsertCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -27475,8 +27565,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> EditValidateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> EditValidateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Identifier of the edit.
@@ -27485,8 +27575,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn edit_id(mut self, new_value: &str) -> EditValidateCall<'a, C> {
-        self._edit_id = new_value.to_string();
+    pub fn edit_id(mut self, new_value: impl Into<String>) -> EditValidateCall<'a, C> {
+        self._edit_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -27826,9 +27916,9 @@ where
     /// we provide this method for API completeness.
     pub fn parent(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> ExternaltransactionCreateexternaltransactionCall<'a, C> {
-        self._parent = new_value.to_string();
+        self._parent = new_value.into();
         self
     }
     /// Required. The id to use for the external transaction. Must be unique across all other transactions for the app. This value should be 1-63 characters and valid characters are /a-zA-Z0-9_-/. Do not use this field to store any Personally Identifiable Information (PII) such as emails. Attempting to store PII in this field may result in requests being blocked.
@@ -27836,9 +27926,9 @@ where
     /// Sets the *external transaction id* query property to the given value.
     pub fn external_transaction_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> ExternaltransactionCreateexternaltransactionCall<'a, C> {
-        self._external_transaction_id = Some(new_value.to_string());
+        self._external_transaction_id = Some(new_value.into());
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -28143,8 +28233,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn name(mut self, new_value: &str) -> ExternaltransactionGetexternaltransactionCall<'a, C> {
-        self._name = new_value.to_string();
+    pub fn name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> ExternaltransactionGetexternaltransactionCall<'a, C> {
+        self._name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -28491,9 +28584,9 @@ where
     /// we provide this method for API completeness.
     pub fn name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> ExternaltransactionRefundexternaltransactionCall<'a, C> {
-        self._name = new_value.to_string();
+        self._name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -28802,8 +28895,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> GeneratedapkDownloadCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> GeneratedapkDownloadCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Version code of the app bundle.
@@ -28822,8 +28915,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn download_id(mut self, new_value: &str) -> GeneratedapkDownloadCall<'a, C> {
-        self._download_id = new_value.to_string();
+    pub fn download_id(mut self, new_value: impl Into<String>) -> GeneratedapkDownloadCall<'a, C> {
+        self._download_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -29137,8 +29230,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> GeneratedapkListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> GeneratedapkListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Version code of the app bundle.
@@ -29480,8 +29573,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn parent(mut self, new_value: &str) -> GrantCreateCall<'a, C> {
-        self._parent = new_value.to_string();
+    pub fn parent(mut self, new_value: impl Into<String>) -> GrantCreateCall<'a, C> {
+        self._parent = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -29759,8 +29852,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn name(mut self, new_value: &str) -> GrantDeleteCall<'a, C> {
-        self._name = new_value.to_string();
+    pub fn name(mut self, new_value: impl Into<String>) -> GrantDeleteCall<'a, C> {
+        self._name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -30094,8 +30187,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn name(mut self, new_value: &str) -> GrantPatchCall<'a, C> {
-        self._name = new_value.to_string();
+    pub fn name(mut self, new_value: impl Into<String>) -> GrantPatchCall<'a, C> {
+        self._name = new_value.into();
         self
     }
     /// Optional. The list of fields to be updated.
@@ -30421,8 +30514,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> InappproductBatchDeleteCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> InappproductBatchDeleteCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -30727,16 +30823,16 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> InappproductBatchGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> InappproductBatchGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Unique identifier for the in-app products.
     ///
     /// Append the given value to the *sku* query property.
     /// Each appended value will retain its original ordering and be '/'-separated in the URL's parameters.
-    pub fn add_sku(mut self, new_value: &str) -> InappproductBatchGetCall<'a, C> {
-        self._sku.push(new_value.to_string());
+    pub fn add_sku(mut self, new_value: impl Into<String>) -> InappproductBatchGetCall<'a, C> {
+        self._sku.push(new_value.into());
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -31074,8 +31170,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> InappproductBatchUpdateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> InappproductBatchUpdateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -31365,8 +31464,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> InappproductDeleteCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> InappproductDeleteCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Unique identifier for the in-app product.
@@ -31375,15 +31474,18 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn sku(mut self, new_value: &str) -> InappproductDeleteCall<'a, C> {
-        self._sku = new_value.to_string();
+    pub fn sku(mut self, new_value: impl Into<String>) -> InappproductDeleteCall<'a, C> {
+        self._sku = new_value.into();
         self
     }
     /// Optional. The latency tolerance for the propagation of this product update. Defaults to latency-sensitive.
     ///
     /// Sets the *latency tolerance* query property to the given value.
-    pub fn latency_tolerance(mut self, new_value: &str) -> InappproductDeleteCall<'a, C> {
-        self._latency_tolerance = Some(new_value.to_string());
+    pub fn latency_tolerance(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> InappproductDeleteCall<'a, C> {
+        self._latency_tolerance = Some(new_value.into());
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -31682,8 +31784,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> InappproductGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> InappproductGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Unique identifier for the in-app product.
@@ -31692,8 +31794,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn sku(mut self, new_value: &str) -> InappproductGetCall<'a, C> {
-        self._sku = new_value.to_string();
+    pub fn sku(mut self, new_value: impl Into<String>) -> InappproductGetCall<'a, C> {
+        self._sku = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -32031,8 +32133,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> InappproductInsertCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> InappproductInsertCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
@@ -32350,15 +32452,15 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> InappproductListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> InappproductListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Pagination token. If empty, list starts at the first product.
     ///
     /// Sets the *token* query property to the given value.
-    pub fn token(mut self, new_value: &str) -> InappproductListCall<'a, C> {
-        self._token = Some(new_value.to_string());
+    pub fn token(mut self, new_value: impl Into<String>) -> InappproductListCall<'a, C> {
+        self._token = Some(new_value.into());
         self
     }
     /// Deprecated and ignored. Set the `token` parameter to retrieve the next page.
@@ -32726,8 +32828,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> InappproductPatchCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> InappproductPatchCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Unique identifier for the in-app product.
@@ -32736,15 +32838,18 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn sku(mut self, new_value: &str) -> InappproductPatchCall<'a, C> {
-        self._sku = new_value.to_string();
+    pub fn sku(mut self, new_value: impl Into<String>) -> InappproductPatchCall<'a, C> {
+        self._sku = new_value.into();
         self
     }
     /// Optional. The latency tolerance for the propagation of this product update. Defaults to latency-sensitive.
     ///
     /// Sets the *latency tolerance* query property to the given value.
-    pub fn latency_tolerance(mut self, new_value: &str) -> InappproductPatchCall<'a, C> {
-        self._latency_tolerance = Some(new_value.to_string());
+    pub fn latency_tolerance(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> InappproductPatchCall<'a, C> {
+        self._latency_tolerance = Some(new_value.into());
         self
     }
     /// If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
@@ -33111,8 +33216,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> InappproductUpdateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> InappproductUpdateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Unique identifier for the in-app product.
@@ -33121,15 +33226,18 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn sku(mut self, new_value: &str) -> InappproductUpdateCall<'a, C> {
-        self._sku = new_value.to_string();
+    pub fn sku(mut self, new_value: impl Into<String>) -> InappproductUpdateCall<'a, C> {
+        self._sku = new_value.into();
         self
     }
     /// Optional. The latency tolerance for the propagation of this product update. Defaults to latency-sensitive.
     ///
     /// Sets the *latency tolerance* query property to the given value.
-    pub fn latency_tolerance(mut self, new_value: &str) -> InappproductUpdateCall<'a, C> {
-        self._latency_tolerance = Some(new_value.to_string());
+    pub fn latency_tolerance(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> InappproductUpdateCall<'a, C> {
+        self._latency_tolerance = Some(new_value.into());
         self
     }
     /// If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
@@ -33504,9 +33612,15 @@ where
                                 if !parts.status.is_success() {
                                     dlg.store_upload_url(None);
                                     dlg.finished(false);
-                                    return Err(common::Error::Failure(
-                                        common::Response::from_parts(parts, body),
-                                    ));
+                                    let bytes = common::to_bytes(body).await.unwrap_or_default();
+                                    let error = serde_json::from_str(&common::to_string(&bytes));
+                                    return Err(match error {
+                                        Ok(value) => common::Error::BadRequest(value),
+                                        _ => common::Error::Failure(common::to_response(
+                                            parts,
+                                            bytes.into(),
+                                        )),
+                                    });
                                 }
                             }
                         }
@@ -33586,9 +33700,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> InternalappsharingartifactUploadapkCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -33949,9 +34063,15 @@ where
                                 if !parts.status.is_success() {
                                     dlg.store_upload_url(None);
                                     dlg.finished(false);
-                                    return Err(common::Error::Failure(
-                                        common::Response::from_parts(parts, body),
-                                    ));
+                                    let bytes = common::to_bytes(body).await.unwrap_or_default();
+                                    let error = serde_json::from_str(&common::to_string(&bytes));
+                                    return Err(match error {
+                                        Ok(value) => common::Error::BadRequest(value),
+                                        _ => common::Error::Failure(common::to_response(
+                                            parts,
+                                            bytes.into(),
+                                        )),
+                                    });
                                 }
                             }
                         }
@@ -34031,9 +34151,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> InternalappsharingartifactUploadbundleCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -34401,9 +34521,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferActivateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent one-time product (ID) of the offer to activate.
@@ -34414,9 +34534,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferActivateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent purchase option (ID) of the offer to activate.
@@ -34427,9 +34547,9 @@ where
     /// we provide this method for API completeness.
     pub fn purchase_option_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferActivateCall<'a, C> {
-        self._purchase_option_id = new_value.to_string();
+        self._purchase_option_id = new_value.into();
         self
     }
     /// Required. The offer ID of the offer to activate.
@@ -34440,9 +34560,9 @@ where
     /// we provide this method for API completeness.
     pub fn offer_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferActivateCall<'a, C> {
-        self._offer_id = new_value.to_string();
+        self._offer_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -34790,9 +34910,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferBatchDeleteCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The product ID of the parent one-time product, if all offers to delete belong to the same product. If this request spans multiple one-time products, set this field to "-".
@@ -34803,9 +34923,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferBatchDeleteCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent purchase option (ID) for which the offers should be deleted. May be specified as '-' to update offers from multiple purchase options.
@@ -34816,9 +34936,9 @@ where
     /// we provide this method for API completeness.
     pub fn purchase_option_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferBatchDeleteCall<'a, C> {
-        self._purchase_option_id = new_value.to_string();
+        self._purchase_option_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -35182,9 +35302,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferBatchGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The product ID of the parent one-time product, if all updated offers belong to the same product. If this request spans multiple one-time products, set this field to "-".
@@ -35195,9 +35315,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferBatchGetCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent purchase option (ID) for which the offers should be updated. May be specified as '-' to update offers from multiple purchase options.
@@ -35208,9 +35328,9 @@ where
     /// we provide this method for API completeness.
     pub fn purchase_option_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferBatchGetCall<'a, C> {
-        self._purchase_option_id = new_value.to_string();
+        self._purchase_option_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -35574,9 +35694,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferBatchUpdateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The product ID of the parent one-time product, if all updated offers belong to the same product. If this request spans multiple one-time products, set this field to "-".
@@ -35587,9 +35707,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferBatchUpdateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent purchase option (ID) for which the offers should be updated. May be specified as '-' to update offers from multiple purchase options.
@@ -35600,9 +35720,9 @@ where
     /// we provide this method for API completeness.
     pub fn purchase_option_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferBatchUpdateCall<'a, C> {
-        self._purchase_option_id = new_value.to_string();
+        self._purchase_option_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -35967,9 +36087,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferBatchUpdateStateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The product ID of the parent one-time product, if all updated offers belong to the same one-time product. If this batch update spans multiple one-time products, set this field to "-".
@@ -35980,9 +36100,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferBatchUpdateStateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The purchase option ID of the parent purchase option, if all updated offers belong to the same purchase option. If this batch update spans multiple purchase options, set this field to "-".
@@ -35993,9 +36113,9 @@ where
     /// we provide this method for API completeness.
     pub fn purchase_option_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferBatchUpdateStateCall<'a, C> {
-        self._purchase_option_id = new_value.to_string();
+        self._purchase_option_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -36365,9 +36485,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferCancelCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent one-time product (ID) of the offer to cancel.
@@ -36378,9 +36498,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferCancelCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent purchase option (ID) of the offer to cancel.
@@ -36391,9 +36511,9 @@ where
     /// we provide this method for API completeness.
     pub fn purchase_option_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferCancelCall<'a, C> {
-        self._purchase_option_id = new_value.to_string();
+        self._purchase_option_id = new_value.into();
         self
     }
     /// Required. The offer ID of the offer to cancel.
@@ -36404,9 +36524,9 @@ where
     /// we provide this method for API completeness.
     pub fn offer_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferCancelCall<'a, C> {
-        self._offer_id = new_value.to_string();
+        self._offer_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -36779,9 +36899,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferDeactivateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent one-time product (ID) of the offer to deactivate.
@@ -36792,9 +36912,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferDeactivateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent purchase option (ID) of the offer to deactivate.
@@ -36805,9 +36925,9 @@ where
     /// we provide this method for API completeness.
     pub fn purchase_option_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferDeactivateCall<'a, C> {
-        self._purchase_option_id = new_value.to_string();
+        self._purchase_option_id = new_value.into();
         self
     }
     /// Required. The offer ID of the offer to deactivate.
@@ -36818,9 +36938,9 @@ where
     /// we provide this method for API completeness.
     pub fn offer_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferDeactivateCall<'a, C> {
-        self._offer_id = new_value.to_string();
+        self._offer_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -37160,9 +37280,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferListCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent one-time product (ID) for which the offers should be read. May be specified as '-' to read all offers under an app.
@@ -37173,9 +37293,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferListCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent purchase option (ID) for which the offers should be read. May be specified as '-' to read all offers under a one-time product or an app. Must be specified as '-' if product_id is specified as '-'.
@@ -37186,9 +37306,9 @@ where
     /// we provide this method for API completeness.
     pub fn purchase_option_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferListCall<'a, C> {
-        self._purchase_option_id = new_value.to_string();
+        self._purchase_option_id = new_value.into();
         self
     }
     /// Optional. A page token, received from a previous `ListOneTimeProductsOffers` call. Provide this to retrieve the subsequent page. When paginating, product_id, package_name and purchase_option_id provided to `ListOneTimeProductsOffersRequest` must match the call that provided the page token.
@@ -37196,9 +37316,9 @@ where
     /// Sets the *page token* query property to the given value.
     pub fn page_token(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionOfferListCall<'a, C> {
-        self._page_token = Some(new_value.to_string());
+        self._page_token = Some(new_value.into());
         self
     }
     /// Optional. The maximum number of offers to return. The service may return fewer than this value. If unspecified, at most 50 offers will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
@@ -37548,9 +37668,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionBatchDeleteCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The product ID of the parent one-time product, if all purchase options to delete belong to the same one-time product. If this batch delete spans multiple one-time products, set this field to "-".
@@ -37561,9 +37681,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionBatchDeleteCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -37924,9 +38044,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionBatchUpdateStateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The product ID of the parent one-time product, if all updated purchase options belong to the same one-time product. If this batch update spans multiple one-time products, set this field to "-".
@@ -37937,9 +38057,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPurchaseOptionBatchUpdateStateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -38275,9 +38395,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductBatchDeleteCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -38587,9 +38707,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductBatchGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. A list of up to 100 product IDs to retrieve. All IDs must be different.
@@ -38598,9 +38718,9 @@ where
     /// Each appended value will retain its original ordering and be '/'-separated in the URL's parameters.
     pub fn add_product_ids(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductBatchGetCall<'a, C> {
-        self._product_ids.push(new_value.to_string());
+        self._product_ids.push(new_value.into());
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -38940,9 +39060,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductBatchUpdateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -39239,8 +39359,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> MonetizationOnetimeproductDeleteCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationOnetimeproductDeleteCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. The one-time product ID of the one-time product to delete.
@@ -39249,8 +39372,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn product_id(mut self, new_value: &str) -> MonetizationOnetimeproductDeleteCall<'a, C> {
-        self._product_id = new_value.to_string();
+    pub fn product_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationOnetimeproductDeleteCall<'a, C> {
+        self._product_id = new_value.into();
         self
     }
     /// Optional. The latency tolerance for the propagation of this product update. Defaults to latency-sensitive.
@@ -39258,9 +39384,9 @@ where
     /// Sets the *latency tolerance* query property to the given value.
     pub fn latency_tolerance(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductDeleteCall<'a, C> {
-        self._latency_tolerance = Some(new_value.to_string());
+        self._latency_tolerance = Some(new_value.into());
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -39563,8 +39689,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> MonetizationOnetimeproductGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationOnetimeproductGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. The product ID of the product to retrieve.
@@ -39573,8 +39702,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn product_id(mut self, new_value: &str) -> MonetizationOnetimeproductGetCall<'a, C> {
-        self._product_id = new_value.to_string();
+    pub fn product_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationOnetimeproductGetCall<'a, C> {
+        self._product_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -39880,15 +40012,21 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> MonetizationOnetimeproductListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationOnetimeproductListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Optional. A page token, received from a previous `ListOneTimeProducts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListOneTimeProducts` must match the call that provided the page token.
     ///
     /// Sets the *page token* query property to the given value.
-    pub fn page_token(mut self, new_value: &str) -> MonetizationOnetimeproductListCall<'a, C> {
-        self._page_token = Some(new_value.to_string());
+    pub fn page_token(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationOnetimeproductListCall<'a, C> {
+        self._page_token = Some(new_value.into());
         self
     }
     /// Optional. The maximum number of one-time product to return. The service may return fewer than this value. If unspecified, at most 50 one-time products will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
@@ -40268,8 +40406,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> MonetizationOnetimeproductPatchCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationOnetimeproductPatchCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. Immutable. Unique product ID of the product. Unique within the parent app. Product IDs must start with a number or lowercase letter, and can contain numbers (0-9), lowercase letters (a-z), underscores (_), and periods (.).
@@ -40278,8 +40419,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn product_id(mut self, new_value: &str) -> MonetizationOnetimeproductPatchCall<'a, C> {
-        self._product_id = new_value.to_string();
+    pub fn product_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationOnetimeproductPatchCall<'a, C> {
+        self._product_id = new_value.into();
         self
     }
     /// Required. The list of fields to be updated.
@@ -40297,9 +40441,9 @@ where
     /// Sets the *regions version.version* query property to the given value.
     pub fn regions_version_version(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPatchCall<'a, C> {
-        self._regions_version_version = Some(new_value.to_string());
+        self._regions_version_version = Some(new_value.into());
         self
     }
     /// Optional. The latency tolerance for the propagation of this product upsert. Defaults to latency-sensitive.
@@ -40307,9 +40451,9 @@ where
     /// Sets the *latency tolerance* query property to the given value.
     pub fn latency_tolerance(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationOnetimeproductPatchCall<'a, C> {
-        self._latency_tolerance = Some(new_value.to_string());
+        self._latency_tolerance = Some(new_value.into());
         self
     }
     /// Optional. If set to true, and the one-time product with the given package_name and product_id doesn't exist, the one-time product will be created. If a new one-time product is created, update_mask is ignored.
@@ -40666,9 +40810,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferActivateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent subscription (ID) of the offer to activate.
@@ -40679,9 +40823,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferActivateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent base plan (ID) of the offer to activate.
@@ -40692,9 +40836,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferActivateCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// Required. The unique offer ID of the offer to activate.
@@ -40705,9 +40849,9 @@ where
     /// we provide this method for API completeness.
     pub fn offer_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferActivateCall<'a, C> {
-        self._offer_id = new_value.to_string();
+        self._offer_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -41066,9 +41210,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferBatchGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The product ID of the parent subscription, if all updated offers belong to the same subscription. If this request spans multiple subscriptions, set this field to "-". Must be set.
@@ -41079,9 +41223,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferBatchGetCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent base plan (ID) for which the offers should be read. May be specified as '-' to read offers from multiple base plans.
@@ -41092,9 +41236,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferBatchGetCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -41453,9 +41597,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferBatchUpdateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The product ID of the parent subscription, if all updated offers belong to the same subscription. If this request spans multiple subscriptions, set this field to "-". Must be set.
@@ -41466,9 +41610,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferBatchUpdateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent base plan (ID) for which the offers should be updated. May be specified as '-' to update offers from multiple base plans.
@@ -41479,9 +41623,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferBatchUpdateCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -41843,9 +41987,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferBatchUpdateStateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The product ID of the parent subscription, if all updated offers belong to the same subscription. If this request spans multiple subscriptions, set this field to "-". Must be set.
@@ -41856,9 +42000,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferBatchUpdateStateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent base plan (ID) for which the offers should be updated. May be specified as '-' to update offers from multiple base plans.
@@ -41869,9 +42013,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferBatchUpdateStateCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -42249,9 +42393,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferCreateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent subscription (ID) for which the offer should be created. Must be equal to the product_id field on the SubscriptionOffer resource.
@@ -42262,9 +42406,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferCreateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent base plan (ID) for which the offer should be created. Must be equal to the base_plan_id field on the SubscriptionOffer resource.
@@ -42275,9 +42419,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferCreateCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// Required. A string representing the version of available regions being used for the specified resource. Regional prices and latest supported version for the resource have to be specified according to the information published in [this article](https://support.google.com/googleplay/android-developer/answer/10532353). Each time the supported locations substantially change, the version will be incremented. Using this field will ensure that creating and updating the resource with an older region's version and set of regional prices and currencies will succeed even though a new version is available.
@@ -42285,9 +42429,9 @@ where
     /// Sets the *regions version.version* query property to the given value.
     pub fn regions_version_version(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferCreateCall<'a, C> {
-        self._regions_version_version = Some(new_value.to_string());
+        self._regions_version_version = Some(new_value.into());
         self
     }
     /// Required. The ID to use for the offer. For the requirements on this format, see the documentation of the offer_id field on the SubscriptionOffer resource.
@@ -42295,9 +42439,9 @@ where
     /// Sets the *offer id* query property to the given value.
     pub fn offer_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferCreateCall<'a, C> {
-        self._offer_id = Some(new_value.to_string());
+        self._offer_id = Some(new_value.into());
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -42657,9 +42801,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferDeactivateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent subscription (ID) of the offer to deactivate.
@@ -42670,9 +42814,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferDeactivateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent base plan (ID) of the offer to deactivate.
@@ -42683,9 +42827,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferDeactivateCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// Required. The unique offer ID of the offer to deactivate.
@@ -42696,9 +42840,9 @@ where
     /// we provide this method for API completeness.
     pub fn offer_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferDeactivateCall<'a, C> {
-        self._offer_id = new_value.to_string();
+        self._offer_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -43004,9 +43148,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferDeleteCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent subscription (ID) of the offer to delete.
@@ -43017,9 +43161,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferDeleteCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent base plan (ID) of the offer to delete.
@@ -43030,9 +43174,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferDeleteCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// Required. The unique offer ID of the offer to delete.
@@ -43043,9 +43187,9 @@ where
     /// we provide this method for API completeness.
     pub fn offer_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferDeleteCall<'a, C> {
-        self._offer_id = new_value.to_string();
+        self._offer_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -43365,9 +43509,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent subscription (ID) of the offer to get.
@@ -43378,9 +43522,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferGetCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent base plan (ID) of the offer to get.
@@ -43391,9 +43535,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferGetCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// Required. The unique offer ID of the offer to get.
@@ -43404,9 +43548,9 @@ where
     /// we provide this method for API completeness.
     pub fn offer_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferGetCall<'a, C> {
-        self._offer_id = new_value.to_string();
+        self._offer_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -43741,9 +43885,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferListCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent subscription (ID) for which the offers should be read. May be specified as '-' to read all offers under an app.
@@ -43754,9 +43898,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferListCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The parent base plan (ID) for which the offers should be read. May be specified as '-' to read all offers under a subscription or an app. Must be specified as '-' if product_id is specified as '-'.
@@ -43767,9 +43911,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferListCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// A page token, received from a previous `ListSubscriptionsOffers` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubscriptionOffers` must match the call that provided the page token.
@@ -43777,9 +43921,9 @@ where
     /// Sets the *page token* query property to the given value.
     pub fn page_token(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferListCall<'a, C> {
-        self._page_token = Some(new_value.to_string());
+        self._page_token = Some(new_value.into());
         self
     }
     /// The maximum number of subscriptions to return. The service may return fewer than this value. If unspecified, at most 50 subscriptions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
@@ -44181,9 +44325,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferPatchCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. Immutable. The ID of the parent subscription this offer belongs to.
@@ -44194,9 +44338,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferPatchCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. Immutable. The ID of the base plan to which this offer is an extension.
@@ -44207,9 +44351,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferPatchCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// Required. Immutable. Unique ID of this subscription offer. Must be unique within the base plan.
@@ -44220,9 +44364,9 @@ where
     /// we provide this method for API completeness.
     pub fn offer_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferPatchCall<'a, C> {
-        self._offer_id = new_value.to_string();
+        self._offer_id = new_value.into();
         self
     }
     /// Required. The list of fields to be updated.
@@ -44240,9 +44384,9 @@ where
     /// Sets the *regions version.version* query property to the given value.
     pub fn regions_version_version(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferPatchCall<'a, C> {
-        self._regions_version_version = Some(new_value.to_string());
+        self._regions_version_version = Some(new_value.into());
         self
     }
     /// Optional. The latency tolerance for the propagation of this product update. Defaults to latency-sensitive.
@@ -44250,9 +44394,9 @@ where
     /// Sets the *latency tolerance* query property to the given value.
     pub fn latency_tolerance(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanOfferPatchCall<'a, C> {
-        self._latency_tolerance = Some(new_value.to_string());
+        self._latency_tolerance = Some(new_value.into());
         self
     }
     /// Optional. If set to true, and the subscription offer with the given package_name, product_id, base_plan_id and offer_id doesn't exist, an offer will be created. If a new offer is created, update_mask is ignored.
@@ -44619,9 +44763,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanActivateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent subscription (ID) of the base plan to activate.
@@ -44632,9 +44776,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanActivateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The unique base plan ID of the base plan to activate.
@@ -44645,9 +44789,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanActivateCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -45000,9 +45144,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanBatchMigratePriceCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The product ID of the parent subscription, if all updated offers belong to the same subscription. If this batch update spans multiple subscriptions, set this field to "-". Must be set.
@@ -45013,9 +45157,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanBatchMigratePriceCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -45371,9 +45515,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanBatchUpdateStateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The product ID of the parent subscription, if all updated base plans belong to the same subscription. If this batch update spans multiple subscriptions, set this field to "-". Must be set.
@@ -45384,9 +45528,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanBatchUpdateStateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -45743,9 +45887,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanDeactivateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent subscription (ID) of the base plan to deactivate.
@@ -45756,9 +45900,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanDeactivateCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The unique base plan ID of the base plan to deactivate.
@@ -45769,9 +45913,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanDeactivateCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -46074,9 +46218,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanDeleteCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The parent subscription (ID) of the base plan to delete.
@@ -46087,9 +46231,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanDeleteCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The unique offer ID of the base plan to delete.
@@ -46100,9 +46244,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanDeleteCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -46458,9 +46602,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanMigratePriceCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// Required. The ID of the subscription to update. Must be equal to the product_id field on the Subscription resource.
@@ -46471,9 +46615,9 @@ where
     /// we provide this method for API completeness.
     pub fn product_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanMigratePriceCall<'a, C> {
-        self._product_id = new_value.to_string();
+        self._product_id = new_value.into();
         self
     }
     /// Required. The unique base plan ID of the base plan to update prices on.
@@ -46484,9 +46628,9 @@ where
     /// we provide this method for API completeness.
     pub fn base_plan_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBasePlanMigratePriceCall<'a, C> {
-        self._base_plan_id = new_value.to_string();
+        self._base_plan_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -46839,8 +46983,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> MonetizationSubscriptionArchiveCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionArchiveCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. The unique product ID of the subscription to delete.
@@ -46849,8 +46996,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn product_id(mut self, new_value: &str) -> MonetizationSubscriptionArchiveCall<'a, C> {
-        self._product_id = new_value.to_string();
+    pub fn product_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionArchiveCall<'a, C> {
+        self._product_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -47155,8 +47305,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> MonetizationSubscriptionBatchGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionBatchGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. A list of up to 100 subscription product IDs to retrieve. All the IDs must be different.
@@ -47165,9 +47318,9 @@ where
     /// Each appended value will retain its original ordering and be '/'-separated in the URL's parameters.
     pub fn add_product_ids(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBatchGetCall<'a, C> {
-        self._product_ids.push(new_value.to_string());
+        self._product_ids.push(new_value.into());
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -47507,9 +47660,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionBatchUpdateCall<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -47852,8 +48005,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> MonetizationSubscriptionCreateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionCreateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. A string representing the version of available regions being used for the specified resource. Regional prices and latest supported version for the resource have to be specified according to the information published in [this article](https://support.google.com/googleplay/android-developer/answer/10532353). Each time the supported locations substantially change, the version will be incremented. Using this field will ensure that creating and updating the resource with an older region's version and set of regional prices and currencies will succeed even though a new version is available.
@@ -47861,16 +48017,19 @@ where
     /// Sets the *regions version.version* query property to the given value.
     pub fn regions_version_version(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionCreateCall<'a, C> {
-        self._regions_version_version = Some(new_value.to_string());
+        self._regions_version_version = Some(new_value.into());
         self
     }
     /// Required. The ID to use for the subscription. For the requirements on this format, see the documentation of the product_id field on the Subscription resource.
     ///
     /// Sets the *product id* query property to the given value.
-    pub fn product_id(mut self, new_value: &str) -> MonetizationSubscriptionCreateCall<'a, C> {
-        self._product_id = Some(new_value.to_string());
+    pub fn product_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionCreateCall<'a, C> {
+        self._product_id = Some(new_value.into());
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -48159,8 +48318,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> MonetizationSubscriptionDeleteCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionDeleteCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. The unique product ID of the subscription to delete.
@@ -48169,8 +48331,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn product_id(mut self, new_value: &str) -> MonetizationSubscriptionDeleteCall<'a, C> {
-        self._product_id = new_value.to_string();
+    pub fn product_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionDeleteCall<'a, C> {
+        self._product_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -48473,8 +48638,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> MonetizationSubscriptionGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. The unique product ID of the subscription to get.
@@ -48483,8 +48651,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn product_id(mut self, new_value: &str) -> MonetizationSubscriptionGetCall<'a, C> {
-        self._product_id = new_value.to_string();
+    pub fn product_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionGetCall<'a, C> {
+        self._product_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -48803,8 +48974,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> MonetizationSubscriptionListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Deprecated: subscription archiving is not supported.
@@ -48817,8 +48991,11 @@ where
     /// A page token, received from a previous `ListSubscriptions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubscriptions` must match the call that provided the page token.
     ///
     /// Sets the *page token* query property to the given value.
-    pub fn page_token(mut self, new_value: &str) -> MonetizationSubscriptionListCall<'a, C> {
-        self._page_token = Some(new_value.to_string());
+    pub fn page_token(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionListCall<'a, C> {
+        self._page_token = Some(new_value.into());
         self
     }
     /// The maximum number of subscriptions to return. The service may return fewer than this value. If unspecified, at most 50 subscriptions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
@@ -49195,8 +49372,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> MonetizationSubscriptionPatchCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionPatchCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Immutable. Unique product ID of the product. Unique within the parent app. Product IDs must be composed of lower-case letters (a-z), numbers (0-9), underscores (_) and dots (.). It must start with a lower-case letter or number, and be between 1 and 40 (inclusive) characters in length.
@@ -49205,8 +49385,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn product_id(mut self, new_value: &str) -> MonetizationSubscriptionPatchCall<'a, C> {
-        self._product_id = new_value.to_string();
+    pub fn product_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationSubscriptionPatchCall<'a, C> {
+        self._product_id = new_value.into();
         self
     }
     /// Required. The list of fields to be updated.
@@ -49224,9 +49407,9 @@ where
     /// Sets the *regions version.version* query property to the given value.
     pub fn regions_version_version(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionPatchCall<'a, C> {
-        self._regions_version_version = Some(new_value.to_string());
+        self._regions_version_version = Some(new_value.into());
         self
     }
     /// Optional. The latency tolerance for the propagation of this product update. Defaults to latency-sensitive.
@@ -49234,9 +49417,9 @@ where
     /// Sets the *latency tolerance* query property to the given value.
     pub fn latency_tolerance(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> MonetizationSubscriptionPatchCall<'a, C> {
-        self._latency_tolerance = Some(new_value.to_string());
+        self._latency_tolerance = Some(new_value.into());
         self
     }
     /// Optional. If set to true, and the subscription with the given package_name and product_id doesn't exist, the subscription will be created. If a new subscription is created, update_mask is ignored.
@@ -49579,8 +49762,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> MonetizationConvertRegionPriceCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> MonetizationConvertRegionPriceCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -49883,16 +50069,16 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> OrderBatchgetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> OrderBatchgetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. The list of order IDs to retrieve order details for. There must be between 1 and 1000 (inclusive) order IDs per request. If any order ID is not found or does not match the provided package, the entire request will fail with an error. The order IDs must be distinct.
     ///
     /// Append the given value to the *order ids* query property.
     /// Each appended value will retain its original ordering and be '/'-separated in the URL's parameters.
-    pub fn add_order_ids(mut self, new_value: &str) -> OrderBatchgetCall<'a, C> {
-        self._order_ids.push(new_value.to_string());
+    pub fn add_order_ids(mut self, new_value: impl Into<String>) -> OrderBatchgetCall<'a, C> {
+        self._order_ids.push(new_value.into());
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -50189,8 +50375,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> OrderGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> OrderGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. The order ID provided to the user when the subscription or in-app order was purchased.
@@ -50199,8 +50385,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn order_id(mut self, new_value: &str) -> OrderGetCall<'a, C> {
-        self._order_id = new_value.to_string();
+    pub fn order_id(mut self, new_value: impl Into<String>) -> OrderGetCall<'a, C> {
+        self._order_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -50488,8 +50674,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> OrderRefundCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> OrderRefundCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The order ID provided to the user when the subscription or in-app order was purchased.
@@ -50498,8 +50684,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn order_id(mut self, new_value: &str) -> OrderRefundCall<'a, C> {
-        self._order_id = new_value.to_string();
+    pub fn order_id(mut self, new_value: impl Into<String>) -> OrderRefundCall<'a, C> {
+        self._order_id = new_value.into();
         self
     }
     /// Whether to revoke the purchased item. If set to true, access to the subscription or in-app item will be terminated immediately. If the item is a recurring subscription, all future payments will also be terminated. Consumed in-app items need to be handled by developer's app. (optional).
@@ -50834,8 +51020,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseProductAcknowledgeCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseProductAcknowledgeCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The inapp product SKU (for example, 'com.some.thing.inapp1').
@@ -50844,8 +51033,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn product_id(mut self, new_value: &str) -> PurchaseProductAcknowledgeCall<'a, C> {
-        self._product_id = new_value.to_string();
+    pub fn product_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseProductAcknowledgeCall<'a, C> {
+        self._product_id = new_value.into();
         self
     }
     /// The token provided to the user's device when the inapp product was purchased.
@@ -50854,8 +51046,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseProductAcknowledgeCall<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(mut self, new_value: impl Into<String>) -> PurchaseProductAcknowledgeCall<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -51146,8 +51338,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseProductConsumeCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseProductConsumeCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The inapp product SKU (for example, 'com.some.thing.inapp1').
@@ -51156,8 +51351,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn product_id(mut self, new_value: &str) -> PurchaseProductConsumeCall<'a, C> {
-        self._product_id = new_value.to_string();
+    pub fn product_id(mut self, new_value: impl Into<String>) -> PurchaseProductConsumeCall<'a, C> {
+        self._product_id = new_value.into();
         self
     }
     /// The token provided to the user's device when the inapp product was purchased.
@@ -51166,8 +51361,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseProductConsumeCall<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(mut self, new_value: impl Into<String>) -> PurchaseProductConsumeCall<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -51472,8 +51667,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseProductGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> PurchaseProductGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The inapp product SKU (for example, 'com.some.thing.inapp1').
@@ -51482,8 +51677,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn product_id(mut self, new_value: &str) -> PurchaseProductGetCall<'a, C> {
-        self._product_id = new_value.to_string();
+    pub fn product_id(mut self, new_value: impl Into<String>) -> PurchaseProductGetCall<'a, C> {
+        self._product_id = new_value.into();
         self
     }
     /// The token provided to the user's device when the inapp product was purchased.
@@ -51492,8 +51687,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseProductGetCall<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(mut self, new_value: impl Into<String>) -> PurchaseProductGetCall<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -51795,9 +51990,9 @@ where
     /// we provide this method for API completeness.
     pub fn package_name(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> PurchaseProductsv2Getproductpurchasev2Call<'a, C> {
-        self._package_name = new_value.to_string();
+        self._package_name = new_value.into();
         self
     }
     /// The token provided to the user's device when the inapp product was purchased.
@@ -51806,8 +52001,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseProductsv2Getproductpurchasev2Call<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseProductsv2Getproductpurchasev2Call<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -52145,8 +52343,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseSubscriptionAcknowledgeCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionAcknowledgeCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Note: Since May 21, 2025, subscription_id is not required, and not recommended for subscription with add-ons. The purchased subscription ID (for example, 'monthly001').
@@ -52157,9 +52358,9 @@ where
     /// we provide this method for API completeness.
     pub fn subscription_id(
         mut self,
-        new_value: &str,
+        new_value: impl Into<String>,
     ) -> PurchaseSubscriptionAcknowledgeCall<'a, C> {
-        self._subscription_id = new_value.to_string();
+        self._subscription_id = new_value.into();
         self
     }
     /// The token provided to the user's device when the subscription was purchased.
@@ -52168,8 +52369,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseSubscriptionAcknowledgeCall<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionAcknowledgeCall<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -52460,8 +52664,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseSubscriptionCancelCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionCancelCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Note: Since May 21, 2025, subscription_id is not required, and not recommended for subscription with add-ons. The purchased subscription ID (for example, 'monthly001').
@@ -52470,8 +52677,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn subscription_id(mut self, new_value: &str) -> PurchaseSubscriptionCancelCall<'a, C> {
-        self._subscription_id = new_value.to_string();
+    pub fn subscription_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionCancelCall<'a, C> {
+        self._subscription_id = new_value.into();
         self
     }
     /// The token provided to the user's device when the subscription was purchased.
@@ -52480,8 +52690,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseSubscriptionCancelCall<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(mut self, new_value: impl Into<String>) -> PurchaseSubscriptionCancelCall<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -52828,8 +53038,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseSubscriptionDeferCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionDeferCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The purchased subscription ID (for example, 'monthly001').
@@ -52838,8 +53051,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn subscription_id(mut self, new_value: &str) -> PurchaseSubscriptionDeferCall<'a, C> {
-        self._subscription_id = new_value.to_string();
+    pub fn subscription_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionDeferCall<'a, C> {
+        self._subscription_id = new_value.into();
         self
     }
     /// The token provided to the user's device when the subscription was purchased.
@@ -52848,8 +53064,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseSubscriptionDeferCall<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(mut self, new_value: impl Into<String>) -> PurchaseSubscriptionDeferCall<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -53154,8 +53370,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseSubscriptionGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The purchased subscription ID (for example, 'monthly001').
@@ -53164,8 +53383,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn subscription_id(mut self, new_value: &str) -> PurchaseSubscriptionGetCall<'a, C> {
-        self._subscription_id = new_value.to_string();
+    pub fn subscription_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionGetCall<'a, C> {
+        self._subscription_id = new_value.into();
         self
     }
     /// The token provided to the user's device when the subscription was purchased.
@@ -53174,8 +53396,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseSubscriptionGetCall<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(mut self, new_value: impl Into<String>) -> PurchaseSubscriptionGetCall<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -53466,8 +53688,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseSubscriptionRefundCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionRefundCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// "The purchased subscription ID (for example, 'monthly001').
@@ -53476,8 +53701,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn subscription_id(mut self, new_value: &str) -> PurchaseSubscriptionRefundCall<'a, C> {
-        self._subscription_id = new_value.to_string();
+    pub fn subscription_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionRefundCall<'a, C> {
+        self._subscription_id = new_value.into();
         self
     }
     /// The token provided to the user's device when the subscription was purchased.
@@ -53486,8 +53714,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseSubscriptionRefundCall<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(mut self, new_value: impl Into<String>) -> PurchaseSubscriptionRefundCall<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -53778,8 +54006,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseSubscriptionRevokeCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionRevokeCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The purchased subscription ID (for example, 'monthly001').
@@ -53788,8 +54019,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn subscription_id(mut self, new_value: &str) -> PurchaseSubscriptionRevokeCall<'a, C> {
-        self._subscription_id = new_value.to_string();
+    pub fn subscription_id(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionRevokeCall<'a, C> {
+        self._subscription_id = new_value.into();
         self
     }
     /// The token provided to the user's device when the subscription was purchased.
@@ -53798,8 +54032,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseSubscriptionRevokeCall<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(mut self, new_value: impl Into<String>) -> PurchaseSubscriptionRevokeCall<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -54140,8 +54374,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseSubscriptionsv2CancelCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionsv2CancelCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. The token provided to the user's device when the subscription was purchased.
@@ -54150,8 +54387,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseSubscriptionsv2CancelCall<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionsv2CancelCall<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -54450,8 +54690,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseSubscriptionsv2GetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionsv2GetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. The token provided to the user's device when the subscription was purchased.
@@ -54460,8 +54703,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseSubscriptionsv2GetCall<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(mut self, new_value: impl Into<String>) -> PurchaseSubscriptionsv2GetCall<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -54802,8 +55045,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseSubscriptionsv2RevokeCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionsv2RevokeCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Required. The token provided to the user's device when the subscription was purchased.
@@ -54812,8 +55058,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn token(mut self, new_value: &str) -> PurchaseSubscriptionsv2RevokeCall<'a, C> {
-        self._token = new_value.to_string();
+    pub fn token(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseSubscriptionsv2RevokeCall<'a, C> {
+        self._token = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -55156,8 +55405,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> PurchaseVoidedpurchaseListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> PurchaseVoidedpurchaseListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The type of voided purchases that you want to see in the response. Possible values are: 0. Only voided in-app product purchases will be returned in the response. This is the default value. 1. Both voided in-app purchases and voided subscription purchases will be returned in the response. Note: Before requesting to receive voided subscription purchases, you must switch to use orderId in the response which uniquely identifies one-time purchases and subscriptions. Otherwise, you will receive multiple subscription orders with the same PurchaseToken, because subscription renewal orders share the same PurchaseToken.
@@ -55170,8 +55422,8 @@ where
     /// Defines the token of the page to return, usually taken from TokenPagination. This can only be used if token paging is enabled.
     ///
     /// Sets the *token* query property to the given value.
-    pub fn token(mut self, new_value: &str) -> PurchaseVoidedpurchaseListCall<'a, C> {
-        self._token = Some(new_value.to_string());
+    pub fn token(mut self, new_value: impl Into<String>) -> PurchaseVoidedpurchaseListCall<'a, C> {
+        self._token = Some(new_value.into());
         self
     }
     /// The time, in milliseconds since the Epoch, of the oldest voided purchase that you want to see in the response. The value of this parameter cannot be older than 30 days and is ignored if a pagination token is set. Default value is current time minus 30 days. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
@@ -55514,8 +55766,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> ReviewGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> ReviewGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Unique identifier for a review.
@@ -55524,15 +55776,15 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn review_id(mut self, new_value: &str) -> ReviewGetCall<'a, C> {
-        self._review_id = new_value.to_string();
+    pub fn review_id(mut self, new_value: impl Into<String>) -> ReviewGetCall<'a, C> {
+        self._review_id = new_value.into();
         self
     }
     /// Language localization code.
     ///
     /// Sets the *translation language* query property to the given value.
-    pub fn translation_language(mut self, new_value: &str) -> ReviewGetCall<'a, C> {
-        self._translation_language = Some(new_value.to_string());
+    pub fn translation_language(mut self, new_value: impl Into<String>) -> ReviewGetCall<'a, C> {
+        self._translation_language = Some(new_value.into());
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -55854,22 +56106,22 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> ReviewListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> ReviewListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Language localization code.
     ///
     /// Sets the *translation language* query property to the given value.
-    pub fn translation_language(mut self, new_value: &str) -> ReviewListCall<'a, C> {
-        self._translation_language = Some(new_value.to_string());
+    pub fn translation_language(mut self, new_value: impl Into<String>) -> ReviewListCall<'a, C> {
+        self._translation_language = Some(new_value.into());
         self
     }
     /// Pagination token. If empty, list starts at the first review.
     ///
     /// Sets the *token* query property to the given value.
-    pub fn token(mut self, new_value: &str) -> ReviewListCall<'a, C> {
-        self._token = Some(new_value.to_string());
+    pub fn token(mut self, new_value: impl Into<String>) -> ReviewListCall<'a, C> {
+        self._token = Some(new_value.into());
         self
     }
     /// The index of the first element to return.
@@ -56217,8 +56469,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> ReviewReplyCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> ReviewReplyCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// Unique identifier for a review.
@@ -56227,8 +56479,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn review_id(mut self, new_value: &str) -> ReviewReplyCall<'a, C> {
-        self._review_id = new_value.to_string();
+    pub fn review_id(mut self, new_value: impl Into<String>) -> ReviewReplyCall<'a, C> {
+        self._review_id = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -56565,8 +56817,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> SystemapkVariantCreateCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> SystemapkVariantCreateCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The version code of the App Bundle.
@@ -56875,8 +57130,11 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> SystemapkVariantDownloadCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(
+        mut self,
+        new_value: impl Into<String>,
+    ) -> SystemapkVariantDownloadCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The version code of the App Bundle.
@@ -57212,8 +57470,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> SystemapkVariantGetCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> SystemapkVariantGetCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The version code of the App Bundle.
@@ -57536,8 +57794,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn package_name(mut self, new_value: &str) -> SystemapkVariantListCall<'a, C> {
-        self._package_name = new_value.to_string();
+    pub fn package_name(mut self, new_value: impl Into<String>) -> SystemapkVariantListCall<'a, C> {
+        self._package_name = new_value.into();
         self
     }
     /// The version code of the App Bundle.
@@ -57879,8 +58137,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn parent(mut self, new_value: &str) -> UserCreateCall<'a, C> {
-        self._parent = new_value.to_string();
+    pub fn parent(mut self, new_value: impl Into<String>) -> UserCreateCall<'a, C> {
+        self._parent = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -58158,8 +58416,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn name(mut self, new_value: &str) -> UserDeleteCall<'a, C> {
-        self._name = new_value.to_string();
+    pub fn name(mut self, new_value: impl Into<String>) -> UserDeleteCall<'a, C> {
+        self._name = new_value.into();
         self
     }
     /// The delegate implementation is consulted whenever there is an intermediate result, or if something goes wrong
@@ -58461,15 +58719,15 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn parent(mut self, new_value: &str) -> UserListCall<'a, C> {
-        self._parent = new_value.to_string();
+    pub fn parent(mut self, new_value: impl Into<String>) -> UserListCall<'a, C> {
+        self._parent = new_value.into();
         self
     }
     /// A token received from a previous call to this method, in order to retrieve further results.
     ///
     /// Sets the *page token* query property to the given value.
-    pub fn page_token(mut self, new_value: &str) -> UserListCall<'a, C> {
-        self._page_token = Some(new_value.to_string());
+    pub fn page_token(mut self, new_value: impl Into<String>) -> UserListCall<'a, C> {
+        self._page_token = Some(new_value.into());
         self
     }
     /// The maximum number of results to return. This must be set to -1 to disable pagination.
@@ -58810,8 +59068,8 @@ where
     ///
     /// Even though the property as already been set when instantiating this call,
     /// we provide this method for API completeness.
-    pub fn name(mut self, new_value: &str) -> UserPatchCall<'a, C> {
-        self._name = new_value.to_string();
+    pub fn name(mut self, new_value: impl Into<String>) -> UserPatchCall<'a, C> {
+        self._name = new_value.into();
         self
     }
     /// Optional. The list of fields to be updated.
